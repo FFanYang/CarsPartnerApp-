@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>691755899425-j3f1co1et3ko7774i0lca35aqo4mb1dj.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.691755899425-j3f1co1et3ko7774i0lca35aqo4mb1dj</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDGWEANfGMaQ2bIJLWS_zxNLLDak6ZrXiw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>691755899425</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>CarsPartnerApp</string>
+	<key>PROJECT_ID</key>
+	<string>carspartner-aab33</string>
+	<key>STORAGE_BUCKET</key>
+	<string>carspartner-aab33.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:691755899425:ios:52a26ac6c360450a236160</string>
+	<key>DATABASE_URL</key>
+	<string>https://carspartner-aab33.firebaseio.com</string>
+</dict>
+</plist>
