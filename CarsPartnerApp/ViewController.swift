@@ -75,14 +75,15 @@ class ViewController: UIViewController {
                         
                     }else{
                         let User = Auth.auth().currentUser?.createProfileChangeRequest()
-                        if User?.displayName == "Driver"{
+                        if User?.displayName == "Rider"{
+                            
                             //Driver
-                            self.performSegue(withIdentifier: "driverSegue", sender: nil)
+                            self.performSegue(withIdentifier: "riderSegue", sender: nil)
                             
                         } else {
             
                             //Rider
-                            self.performSegue(withIdentifier: "riderSegue", sender: nil)
+                            self.performSegue(withIdentifier: "driverSegue", sender: nil)
                         
                         }
                         

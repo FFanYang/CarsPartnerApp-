@@ -69,7 +69,6 @@ class DriverTableViewController: UITableViewController, CLLocationManagerDelegat
         let snashot = rideRequests[indexPath.row]
         
         if let rideRequestDictionary = snashot.value as? [String:AnyObject] {
-            
         if let email = rideRequestDictionary["email"] as? String {
             //How far away driver
             if let lat = rideRequestDictionary["lat"] as? Double {
@@ -104,10 +103,35 @@ class DriverTableViewController: UITableViewController, CLLocationManagerDelegat
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        performSegue(withIdentifier: "acceptSegue", sender: nil)
+        let snashot = rideRequests[indexPath.row]
+        performSegue(withIdentifier: "acceptSegue", sender: snashot)
         
     }
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let acceptVC = segue.destination as? AcceptRequestViewController{
+            if let snapshot = sender as? DataSnapshot{
+                
+                if let rideRequestDictionary = snapshot.value as? [String:AnyObject] {
+                if let email = rideRequestDictionary["email"] as? String {
+                    //How far away driver
+                    if let lat = rideRequestDictionary["lat"] as? Double {
+                        if let lon = rideRequestDictionary["lon"] as? Double {
+                            acceptVC.requestEmail = email
+                            
+                            let location = CLLocationCoordinate2D(
+                            latitude: lat, longitude: lon
+                            )
+                            acceptVC.requestLocation = location
+                            acceptVC.driverLocation = driverLocation
+                        }
+                    }
+                }
+                    
+                }
+                
+            }
+        }
+    }
    
    
 
