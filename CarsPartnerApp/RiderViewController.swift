@@ -24,7 +24,8 @@ class RiderViewController: UIViewController, CLLocationManagerDelegate {
     var locationManager = CLLocationManager()
     var userLocation = CLLocationCoordinate2D()
     var carHasBeencalled = false
- 
+    var driverLocation = CLLocationCoordinate2D()
+    var driverOnTheWay = false
     
     //set up view did load
     override func viewDidLoad() {
@@ -43,10 +44,38 @@ class RiderViewController: UIViewController, CLLocationManagerDelegate {
                 self.carHasBeencalled = true
                 self.callaCarButton.setTitle("Cancle car", for: .normal)
                 Database.database().reference().child("RideRequests").removeAllObservers()
+                
+                if let rideRequestDictionary = snapshot.value as? [String:AnyObject] {
+                    if let driverlat = rideRequestDictionary["driverlat"] as? Double {
+                        if let driverlon = rideRequestDictionary["driverlon"] as?
+                            Double {
+                        self.driverLocation = CLLocationCoordinate2D(latitude: driverlat, longitude: driverlon)
+                            self.driverOnTheWay = true
+                            self.displayDriverAndRider()
+                            
+                    }
+                }
+            }
+                
             })
         }
         // Do any additional setup after loading the view.
     }
+    
+    func displayDriverAndRider() {
+        let driverCLLocation = CLLocation(latitude: driverLocation.latitude, longitude:
+                                            driverLocation.longitude)
+        let riderCLLocation = CLLocation(latitude: userLocation.latitude, longitude:
+                                            userLocation.longitude)
+        let distance = driverCLLocation.distance(from:
+            riderCLLocation )/1000
+        let roundedDistance = round(distance * 100)/100
+        callaCarButton.setTitle("YOUR DRIVER IS (roundedDistance) AWAY!", for: .normal)
+        
+    }
+    
+    
+    
     
     //Did update locations any time
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -71,6 +100,7 @@ class RiderViewController: UIViewController, CLLocationManagerDelegate {
     
     
     @IBAction func callCarTapped(_ sender: Any) {
+        if driverOnTheWay{
         if let email = Auth.auth().currentUser?.email {
             
             if carHasBeencalled {
@@ -79,6 +109,9 @@ class RiderViewController: UIViewController, CLLocationManagerDelegate {
                 Database.database().reference().child("RideRequests").queryOrdered(byChild: "email").queryEqual(toValue: email).observe(.childAdded, with: {(snapshot) in
                     snapshot.ref.removeValue()
                     Database.database().reference().child("RideRequests").removeAllObservers()
+                    
+                    
+                    
                 })
                     
             } else {
@@ -86,7 +119,8 @@ class RiderViewController: UIViewController, CLLocationManagerDelegate {
                 Database.database().reference().child("RideRequests").childByAutoId().setValue(rideRequestDictionary)
                 callaCarButton.setTitle("Cancle Calling Vehicle", for: .normal)
             }
-        
+        }
+            
         }
     }
     
