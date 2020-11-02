@@ -10,6 +10,9 @@
 		1D8C3CB2A6B5826D9D26CB93 /* Pods_CarsPartnerAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87215F411A720A780DA7A8A7 /* Pods_CarsPartnerAppTests.framework */; };
 		288CEAE739DBB5673BAD4E57 /* Pods_CarsPartnerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D379CA50DBCFE2B429730CF1 /* Pods_CarsPartnerApp.framework */; };
 		A626F0B2252FE24B0044CE3F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A626F0B1252FE24B0044CE3F /* GoogleService-Info.plist */; };
+		A6494D69254F41CD0095AA56 /* RiderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6494D68254F41CD0095AA56 /* RiderViewController.swift */; };
+		A6494DE2254FA60F0095AA56 /* DriverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6494DE1254FA60F0095AA56 /* DriverTableViewController.swift */; };
+		A6494DF5254FBB1D0095AA56 /* AcceptRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6494DF4254FBB1D0095AA56 /* AcceptRequestViewController.swift */; };
 		A6BFB01B252FB83500DC512F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BFB01A252FB83500DC512F /* AppDelegate.swift */; };
 		A6BFB01D252FB83500DC512F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BFB01C252FB83500DC512F /* SceneDelegate.swift */; };
 		A6BFB01F252FB83500DC512F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BFB01E252FB83500DC512F /* ViewController.swift */; };
@@ -46,6 +49,9 @@
 		92779A5EF1BA7C2AF175AF76 /* Pods-CarsPartnerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarsPartnerApp.release.xcconfig"; path = "Target Support Files/Pods-CarsPartnerApp/Pods-CarsPartnerApp.release.xcconfig"; sourceTree = "<group>"; };
 		A3FE720D05C749B95D58784F /* Pods-CarsPartnerApp-CarsPartnerAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarsPartnerApp-CarsPartnerAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-CarsPartnerApp-CarsPartnerAppUITests/Pods-CarsPartnerApp-CarsPartnerAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A626F0B1252FE24B0044CE3F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A6494D68254F41CD0095AA56 /* RiderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderViewController.swift; sourceTree = "<group>"; };
+		A6494DE1254FA60F0095AA56 /* DriverTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverTableViewController.swift; sourceTree = "<group>"; };
+		A6494DF4254FBB1D0095AA56 /* AcceptRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptRequestViewController.swift; sourceTree = "<group>"; };
 		A6BFB017252FB83500DC512F /* CarsPartnerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarsPartnerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6BFB01A252FB83500DC512F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6BFB01C252FB83500DC512F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,7 +150,10 @@
 				A6BFB01A252FB83500DC512F /* AppDelegate.swift */,
 				A6BFB01C252FB83500DC512F /* SceneDelegate.swift */,
 				A6BFB01E252FB83500DC512F /* ViewController.swift */,
+				A6494D68254F41CD0095AA56 /* RiderViewController.swift */,
+				A6494DE1254FA60F0095AA56 /* DriverTableViewController.swift */,
 				A6BFB020252FB83500DC512F /* Main.storyboard */,
+				A6494DF4254FBB1D0095AA56 /* AcceptRequestViewController.swift */,
 				A6BFB023252FB83600DC512F /* Assets.xcassets */,
 				A6BFB025252FB83600DC512F /* LaunchScreen.storyboard */,
 				A6BFB028252FB83600DC512F /* Info.plist */,
@@ -411,7 +420,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6BFB01F252FB83500DC512F /* ViewController.swift in Sources */,
+				A6494D69254F41CD0095AA56 /* RiderViewController.swift in Sources */,
+				A6494DE2254FA60F0095AA56 /* DriverTableViewController.swift in Sources */,
 				A6BFB01B252FB83500DC512F /* AppDelegate.swift in Sources */,
+				A6494DF5254FBB1D0095AA56 /* AcceptRequestViewController.swift in Sources */,
 				A6BFB01D252FB83500DC512F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

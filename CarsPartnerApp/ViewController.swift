@@ -48,18 +48,44 @@ class ViewController: UIViewController {
                     if error != nil{
                         self.displayAlert(title: "Error", message: error!.localizedDescription)
                     }      else{
-                        print("Sign Up Success!")
-                        self.performSegue(withIdentifier: "driverSegue", sender: nil)
-                        
-                    }          })
+                        if self.driverRiderSwitch.isOn {
+                            //Driver sign up
+                           let req = Auth.auth().currentUser?.createProfileChangeRequest()
+                            req?.displayName = "Rider"
+                            req?.commitChanges(completion: nil)
+                            self.performSegue(withIdentifier: "riderSegue", sender: nil)
+                            
+                        } else {
+                            //Rider sign up
+                            let req = Auth.auth().currentUser?.createProfileChangeRequest()
+                             req?.displayName = "driver"
+                             req?.commitChanges(completion: nil)
+                            self.performSegue(withIdentifier: "driverSegue", sender: nil)
+                            
+                        }
+           
+                    }
+                    
+                })
             }else {
                 // Log In
                 Auth.auth().signIn(withEmail: email, password: password, completion: {(User,error) in
                     if error != nil {
                         self.displayAlert(title: "Error", message: error!.localizedDescription)
+                        
                     }else{
-                        print("Log In Success")
-                        self.performSegue(withIdentifier: "driverSegue", sender: nil)
+                        let User = Auth.auth().currentUser?.createProfileChangeRequest()
+                        if User?.displayName == "Driver"{
+                            //Driver
+                            self.performSegue(withIdentifier: "driverSegue", sender: nil)
+                            
+                        } else {
+            
+                            //Rider
+                            self.performSegue(withIdentifier: "riderSegue", sender: nil)
+                        
+                        }
+                        
                     }
                 })
                 
